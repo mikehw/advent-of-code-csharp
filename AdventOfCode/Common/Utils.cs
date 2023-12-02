@@ -6,6 +6,7 @@ public static class Utils
 {
     private static readonly IConfiguration Configuration = new ConfigurationBuilder()
         .AddJsonFile("./appsettings.json", false, true)
+        .AddJsonFile("./appsettings.local.json", true, true)
         .Build();
 
     private static async Task<string> FetchInput(int year, int day)
@@ -20,7 +21,6 @@ public static class Utils
         // Fetch the file at https://adventofcode.com/{year}/day/{day}/input
         var client = new HttpClient();
         var sessionCookie = Configuration["AdventOfCodeSession"];
-        Console.WriteLine("SessionCookie: " + sessionCookie);
         client.DefaultRequestHeaders.Add("Cookie", $"session={sessionCookie}");
         var result = await client.GetAsync($"https://adventofcode.com/{year}/day/{day}/input");
         var content = await result.Content.ReadAsStringAsync();
