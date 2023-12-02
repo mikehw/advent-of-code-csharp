@@ -14,7 +14,7 @@ public class Day1
     // }
     
     [Test]
-    public async Task Test2()
+    public async Task Test1()
     {
         var input =
             "two1nine\neightwo1three\nabcone2threexyz\nxtwone3four\n4nineeightseven2\nzoneight234\n7pqrstsixteen";
@@ -29,7 +29,7 @@ public class Day1
     }
     
     [Test]
-    public async Task Test8()
+    public async Task Test2()
     {
         var input = "eightzgqzr3eight";
         var result = await _instance.SolvePart2(input);
@@ -37,7 +37,7 @@ public class Day1
     }
     
     [Test]
-    public async Task Test9()
+    public async Task Test3()
     {
         var input = "9sbxg";
         var result = await _instance.SolvePart2(input);
